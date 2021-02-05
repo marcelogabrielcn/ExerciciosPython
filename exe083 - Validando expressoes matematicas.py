@@ -1,7 +1,15 @@
-letras = list(str(input('Digite a expressão: ')))
-#print(letras)
-#print(letras.count('('), letras.count(')'))
-if letras.count('(') == letras.count(')'):
-    print('Esta expressão é valida!')
+frase = str(input('Digite a expressão: '))
+lista = []
+for caractere in frase:
+    if caractere == '(':
+        lista.append('(')
+    elif caractere == ')':
+        if len(lista) > 0:
+            lista.pop()
+        else:
+            lista.append(')')
+            break
+if len(lista) == 0:
+    print('Esta expressão é váldida!')
 else:
-    print('Esta expressão é inválida!')
+    print('Essa expressão é inválida')
