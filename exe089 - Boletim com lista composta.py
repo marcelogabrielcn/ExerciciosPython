@@ -8,8 +8,12 @@ print('-=-' * 10)
 print('Vamos cadastrar alguns alunos e suas notas.')
 while True:
     ltemp.append(str(input('Digite o nome do aluno: ').capitalize()))
-    ltemp2.append(float(input('Digite a primeira nota: ')))
-    ltemp2.append(float(input('Digite a segunda nota: ')))
+    n1 = float(input('Digite a primeira nota: '))
+    n2 = float(input('Digite a segunda nota: '))
+    med = (n1 + n2) / 2
+    ltemp2.append(n1)
+    ltemp2.append(n2)
+    ltemp.append(med)
     ltemp.append(ltemp2[:])
     alunos.append(ltemp[:])
     ltemp.clear()
@@ -24,7 +28,16 @@ print('No. NOME           MÉDIA')
 for a, d in enumerate(alunos):  # a = numeros dos alunos d = dados dos alunos
     print(f'{a + 1:<4}', end='')
     print(f'{d[0]:<15}', end='')
-
-
-    #for i, al in enumerate(d):  # i = índice al = dados dos alunos [0] = nome
-        #print(al)
+    print(f'{d[1]:.1f}')
+print('-=-' * 10)
+while True:
+    expor = int(input('Quer mostrar a nota de qual aluno? (0 para sair) ')) - 1
+    if expor == -1:
+        print('Finalizando...')
+        break
+    if expor < 0 or expor > len(alunos) - 1:
+        print('Digite um número válido, olhe na tabela o número correspondente ao aluno.')
+        expor = int(input('Quer mostrar a nota de qual aluno? (0 para sair) ')) - 1
+    print(f'Notas de {alunos[expor][0]}: {alunos[expor][2]}')
+print('-=-' * 10)
+print('PROGRAMA FINALIZADO')
