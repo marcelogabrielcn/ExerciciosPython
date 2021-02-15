@@ -11,8 +11,11 @@ print(f'{logo:^30}')
 print('-=-' * 10)
 jogos = int(input('Quantos palpites quer receber? '))
 for p in range(0, jogos):
-    for j in range(0, 6):
-        ltemp.append(randint(0, 60))
+    while len(ltemp) < 6:
+        num = randint(0, 60)
+        if num not in ltemp:
+            ltemp.append(num)
+    ltemp.sort()
     palpites.append(ltemp[:])
     ltemp.clear()
 for pa in palpites:
