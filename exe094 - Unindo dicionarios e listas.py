@@ -23,7 +23,7 @@ print('-=-' * 10)
 print(f'Ao todo foram cadastradas {len(pessoas)} pessoas.')
 print(f'A média de idade das pessoas é {medIdade/len(pessoas):.1f} anos.')
 print(f"As mulheres cadastradas foram: {mulheres}")
-print(f"As pessoas acima da média de idade são: ")
+print(f"As pessoas acima da média de idade são: ", end='')
 for i, v in enumerate(pessoas):
     if v['idade'] > medIdade/len(pessoas):
         print(v['nome'])
