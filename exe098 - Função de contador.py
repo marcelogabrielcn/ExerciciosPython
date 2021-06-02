@@ -8,12 +8,13 @@ def contar(a, b, c):
         passo = 1
     if passo < 0:
         passo = abs(passo)
-    while inicio != fim:
-        if inicio < fim:
+    if inicio < fim:
+        while inicio <= fim:
             print(inicio, end=' ')
             sleep(0.5)
             inicio += passo
-        elif inicio > fim:
+    elif inicio > fim:
+        while inicio >= fim:
             print(inicio, end=' ')
             sleep(0.5)
             inicio -= passo
@@ -25,7 +26,7 @@ print('Contando de 0 a 10')
 contar(0, 10, 1)
 print()
 print('Contando de 10 a 0')
-contar(10, 0, -1)
+contar(10, 0, 2)
 print()
 print('Agora digite qual contagem você quer ver: ')
 ini = int(input('Início: '))
