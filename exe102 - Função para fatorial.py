@@ -1,11 +1,10 @@
 def fatorial(num, show=False):
-    '''
-    fatorial(num, show=True)
-        -> Calcula o fatorial de um número
-        :param num: O número a ser calculado
-        :param show: (Opcional), mostrar ou não a conta
-        :return: O valor do fatorial de num
-    '''
+    """
+    -> Calcula o fatorial de um número
+    :param num: O número a ser calculado
+    :param show: (Opcional), mostrar ou não a conta
+    :return: O valor do fatorial de num
+    """
     if show:
         fat = 1
         i = 2
