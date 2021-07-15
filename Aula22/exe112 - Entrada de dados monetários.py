@@ -1,5 +1,4 @@
 import moeda
 
-n = float(input('Informe um valor: '))
-
+n = moeda.leiaDinheiro('Informe um valor: R$')
 moeda.resumo(n, 70, 30)
