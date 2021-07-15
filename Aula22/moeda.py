@@ -36,7 +36,7 @@ def metade(valor, formatado=False):
 
 def moeda(n):
     formatado = f'R${float(n):.2f}'
-    return formatado
+    return formatado.replace('.', ',')
 
 
 def resumo(num, aum: float, red: float):
@@ -44,8 +44,18 @@ def resumo(num, aum: float, red: float):
     txt = 'RESUMO DO VALOR'
     print(f'{txt:>25}')
     print('_' * 40)
-    print(f'Preço informado: {moeda(num):>30}')
-    print(f'Metade do valor: {metade(num, True):>30}')
-    print(f'Dobro do valor: {dobro(num, True):>30}')
-    print(f'{aum}% de aumento: {aumentar(num, True, aum):>30}')
-    print(f'{red}% de redução: {diminuir(num, True, red):>30}')
+    print(f'Preço informado: {moeda(num):>25}')
+    print(f'Metade do valor: {metade(num, True):>25}')
+    print(f'Dobro do valor: {dobro(num, True):>25}')
+    print(f'{aum}% de aumento: {aumentar(num, True, aum):>25}')
+    print(f'{red}% de redução: {diminuir(num, True, red):>25}')
+
+def leiaDinheiro(msg):
+    valido = False
+    while not valido:
+        entrada = str(input(msg)).replace(',', '.').strip()
+        if entrada.isalpha() or entrada == '':
+            print(f'\033[0;31mERRO: \"{entrada}\" é um valor inválido!\033[m')
+        else:
+            valido = True
+            return float(entrada)
